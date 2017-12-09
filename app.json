@@ -6,9 +6,7 @@
     "pages/preview/preview",
     "pages/download/download",
     "pages/endpage/endpage",
-    "pages/index/index",
-    "pages/logs/logs"
-    
+    "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

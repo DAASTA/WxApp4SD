@@ -2,7 +2,7 @@ import weCropper from '../../dist/weCropper.js'
 const device = wx.getSystemInfoSync()
 const width = device.windowWidth
 const height = device.windowHeight - 50
-const resolution = 512
+const resolution = 256
 
 Page({
   data: {

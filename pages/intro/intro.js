@@ -1,21 +1,9 @@
-// pages/intro/intro.js
 var app = getApp()
 
 const device = wx.getSystemInfoSync()
 const scnWidth = device.windowWidth
 const scnHeight = device.windowHeight
 const ratio = 0.75
-
-/*var wxTimer1 = new timer({
-  beginTime: "00:00:20",
-  complete: function () {
-    console.log("complete")
-  },
-  interval: 2,
-  intervalFn: function () {
-    console.log("2 sec!")
-  }
-})*/
 
 Page({
 
