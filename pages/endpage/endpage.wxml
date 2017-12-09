@@ -1,7 +1,7 @@
 <!--pages/endpage/endpage.wxml-->
-<image mode="aspectFit" style="width: 100%; height: 250px;" src="../../images/endpage/smallApp_QR.jpg"></image>
+<image mode="aspectFit" style="width: 100%; height: 256px;" src="{{resultimg}}" bindtap='preview_Image'></image>
 <block class="end text">
-  <image mode="aspectFit" style="width: 100%; height: 200px;" src="../../images/endpage/normal_QR_withtext.jpg"></image>
-  <text style="margin-top: 30px;">自定义·自画像 Version 1.2.1 Debug</text>
-  <text>\n本程序为调试版，正式版本敬请期待</text>
+  <image mode="aspectFit" style="width: 100%; height: 200px;" src="../../images/endpage/normal_QR_withtext.jpg" bindtap="preview_QR"></image>
+  <text style="margin-top: 20px;">自定义·自画像 Version 1.2.3 Debug</text>
+  <text style="margin-top: 10px;">\n本程序为调试版，正式版本敬请期待</text>
 </block>
