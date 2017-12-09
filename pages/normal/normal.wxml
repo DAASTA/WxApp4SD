@@ -3,7 +3,7 @@
 <view class="cropper-wrapper">
     <template is="weCropper" data="{{...cropperOpt}}"/>
     <view class="cropper-buttons">
-        <button class="upload" bindtap="gobackTap" style="width: 50%;">重新选择</button>
-        <button class="getCropperImage" bindtap="getCropperImage" style="width: 50%;">确认裁剪</button>
+         <button class="weui-btn button" type="default" bindtap="gobackTap">重新选择</button> 
+         <button class="weui-btn button" type="primary" bindtap="getCropperImage">确认裁剪</button> 
     </view>
 </view>

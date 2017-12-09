@@ -30,7 +30,7 @@ Page({
     attempt2download = false
     iscomplete = false
     is_uploading = true
-    that.setData({ notification_text: "正在上传文件" })
+    that.setData({ notification_text: "正在上传图片" })
     add_percent = true
     percent_sup = 20
     //上传文件
@@ -91,7 +91,7 @@ Page({
       console.log(is_uploading)
       console.log(iscomplete)
       if (is_uploading) {
-        that.setData({ notification_text: "正在上传文件" })
+        that.setData({ notification_text: "正在上传图片" })
         percent_sup = 20
         add_percent = true
       }
@@ -125,7 +125,7 @@ Page({
                 }
             }
             if (res.data == 0) {
-              that.setData({ notification_text: "正在处理您提交的图片，请稍后..." })
+              that.setData({ notification_text: "二极管子正在努力为您作画，请稍候..." })
               if (progress_percent < 40) {
                 progress_percent = 40
                 that.setData({ progressPercent: progress_percent })

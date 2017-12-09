@@ -13,12 +13,15 @@
         <view class="item flex" bindtap="useMyAvatar">使用我的头像</view>
       </view>
       <view style="width: 50%;">
-        <image src="../../images/login/plus.jpg" class="avatar" bindtap="uploadImg"></image>
+        <image src="../../images/login/album.png" mode="aspectFit" class="icon" bindtap="uploadImg"></image>
         <view class="item flex" bindtap="uploadImg">选择其他图片</view>
       </view>
       <view style="width: 50%;">
-        <image src="../../images/login/camera.jpg" class="avatar" bindtap="takephoto"></image>
+        <image src="../../images/login/camera.png" mode="aspectFit" class="icon" bindtap="takephoto"></image>
         <view class="item flex" bindtap="takephoto">拍照</view>
+      </view>
+      <view style='width: 60%; font-size:12px; color: #c7c7c7;'>
+        小贴士：为得到最佳的处理效果，建议使用分辨率不低于256x256的真人照片
       </view>
     </view>
   </block>

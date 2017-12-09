@@ -1,6 +1,6 @@
 {
   "backgroundTextStyle": "dark",
-  "navigationBarBackgroundColor": "#000",
-  "navigationBarTitleText": "选择图片",
-  "navigationBarTextStyle": "#fff"
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "正在生成自画像…",
+  "navigationBarTextStyle": "black"
 }

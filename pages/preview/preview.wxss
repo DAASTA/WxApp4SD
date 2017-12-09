@@ -1,21 +1,25 @@
 /* pages/preview/preview.wxss */
-.radio-group {
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-  margin: auto;
-}
-
-.buttongroup {
-  margin: auto;
-  margin-top: 0px;
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-  width: 100%;
-}
 
 .button {
   width: 160px;
   margin: 0px;
+}
+
+
+.thumbnail {
+  width: 30%;
+}
+
+.button {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.buttongroup {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  padding-top: 0;
+  padding-bottom: 15rpx;
+  margin-top: 15rpx;
 }
