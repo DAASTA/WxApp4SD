@@ -1,40 +1,45 @@
 <!--pages/intro/intro.wxml-->
 <!--  首页  -->
 
-<swiper vertical="true" style="width: 100%; height: 100%;">
+<swiper vertical="true" style="width: 100%; height: 100%;" current="{{swiper_current}}">
   <swiper-item>
-    <view class="weui-artile" style='height: 100%;'>
-      <view class="text_view"> 
+    <view class="container">
+      <view class="text_view" style='width: 70%;'> 
         <text>
           一个再平常不过的日子<br/>
           你路过楼里一直立在那里的镜子<br/>
           镜中的你，还是那个疲惫不堪，眼睛红红的平常的你。<br/>
         </text>
-      </view> 
-      <image class="weui-article__img centered_img" src="../../images/intro/diode1.jpg" mode="aspectFit" style="height: 300px;" />
-      <image class='bottom_arrow' src="../../images/intro/pagedn.gif" mode="aspectFit"></image>
+      </view>
+      <image class="weui-article__img centered_img" src="../../images/intro/diode1.jpg" mode="aspectFit" style="width: 100%;" />
+      <image class='bottom_arrow' src="../../images/intro/pagedn.gif" mode="aspectFit" bindtap="pageDown"></image>
     </view>
   </swiper-item>
+
   <swiper-item>
-    <view class="weui-artile">
-      <view class="text_view"> 
+    <view class="container" style='padding-top: 0'>
+      <view class="text_view" style="width: 70%">
         <text>
-        你有没有想过，要画出一个自己梦想中的自己？<br/>
-        没时间画画？没工夫码代码？<br/>
-        没关系，让二极管子来帮你！
+          你有没有想过，要画出一个自己梦想中的自己？<br/>
+          没时间画画？没工夫码代码？<br/>
+          没关系，让二极管子来帮你！
         </text>
-        <image class="weui-article__img centered_img" src="../../images/intro/diode2.jpg" mode="aspectFit" style="height: 300px;" />
-        <view style='text-align: center;'>
-          自动化系学生节
-        </view>
-        <view style='text-align: center;'>
-          自定义·自画像
-        </view>
-        <view style='text-align: center;'>
-          上传你的头像，找到一个不一样的自己
-        </view>
-        <button class="weui-btn" type="primary" bindtap="nextPage">点击上传头像</button>
-      </view> 
+      </view>
+      <image class="weui-article__img centered_img" src="../../images/intro/diode2.jpg" mode="aspectFit" style="width: 100%;" />
+      <view style='text-align: center;'>
+        自动化系学生节
+      </view>
+      <view style='text-align: center;'>
+        自定义·自画像
+      </view>
+      <view style='text-align: center;'>
+        上传你的头像
+      </view>
+      <view style='text-align: center;'>
+        找到一个不一样的自己
+      </view>
+      <button class="weui-btn" type="primary" bindtap="nextPage">点击上传头像</button>
     </view>
+  
   </swiper-item>
 </swiper>
