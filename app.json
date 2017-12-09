@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/intro/intro",
+    "pages/login/login",
+    "pages/normal/normal",
+    "pages/preview/preview",
+    "pages/download/download",
+    "pages/endpage/endpage",
+    "pages/index/index",
+    "pages/logs/logs"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WxApp",
+    "navigationBarTextStyle": "black"
+  }
+}

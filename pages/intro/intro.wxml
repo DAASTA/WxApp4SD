@@ -1,0 +1,15 @@
+<!--pages/intro/intro.wxml-->
+<!--  首页  -->
+<view class="content">
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="100000" duration="1000" style="width: 100%; height: 700px;">
+    <swiper-item>
+      <image src="../../images/intro/intro-swiper-0.jpg" style="width: 100%; height: 500px; margin: 0px; padding: 0px;" mode="aspectFit"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="../../images/intro/intro-swiper-1.jpg" style="width: 100%; height: 500px; margin: 0px; padding: 0px;" mode="aspectFit"></image>
+      <view style="width: 200px; margin:auto;">
+        <button type="default" size="default" bindtap="nextPage">点击进入</button>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>

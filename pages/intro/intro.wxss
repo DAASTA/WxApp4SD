@@ -1,0 +1,12 @@
+/* pages/intro/intro.wxss */
+.nav {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.nav-item {
+  width: 25%;
+  margin-top: 5px;
+  font-size: 12px;
+}
