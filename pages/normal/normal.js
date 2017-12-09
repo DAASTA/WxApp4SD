@@ -12,8 +12,8 @@ Page({
 			//height: device.windowWidth,
       width,
       height,
-			scale: 5.0, //original: 2.5
-			zoom: 8, //original: 8
+			scale: 2.5,
+			zoom: 8,
       cut: {
         x: (width - resolution) / 2,
         y: (height - resolution) / 2,
@@ -34,10 +34,6 @@ Page({
   getCropperImage () {
     this.wecropper.getCropperImage((src) => {
       getApp().globalData.editedImgSrc = src
-      /*wx.previewImage({
-        current: '', // 当前显示图片的http链接
-        urls: [src] // 需要预览的图片http链接列表
-      })*/
       wx.navigateTo({
         url: '../preview/preview'
       })
@@ -63,11 +59,8 @@ Page({
 
 		new weCropper(cropperOpt)
 			.on('ready', function (ctx) {
-				//console.log(`wecropper is ready for work!`)
 			})
 			.on('beforeImageLoad', (ctx) => {
-				//console.log(`before picture loaded, i can do something`)
-				//console.log(`current canvas context:`, ctx)
 				wx.showToast({
 					title: '上传中',
 					icon: 'loading',
@@ -75,13 +68,9 @@ Page({
 				})
 			})
 			.on('imageLoad', (ctx) => {
-				//console.log(`picture loaded`)
-				//console.log(`current canvas context:`, ctx)
 				wx.hideToast()
 			})
       .on('beforeDraw', (ctx, instance) => {
-        //console.log(`before canvas draw,i can do something`)
-        //console.log(`current canvas context:`, ctx)
       })
       .updateCanvas()
 

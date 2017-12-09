@@ -5,8 +5,7 @@
     "pages/normal/normal",
     "pages/preview/preview",
     "pages/download/download",
-    "pages/endpage/endpage",
-    "pages/index/index"
+    "pages/endpage/endpage"
   ],
   "window": {
     "backgroundTextStyle": "light",

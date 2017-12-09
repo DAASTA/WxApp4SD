@@ -36,7 +36,6 @@ Page({
       wx.getUserInfo({
         success: res => {
           app.globalData.userInfo = res.userInfo
-          //console.log(res) //============================
           this.setData({
             userInfo: res.userInfo,
             hasUserInfo: true
@@ -44,10 +43,8 @@ Page({
         }
       })
     }
-    //console.log(app.globalData.userInfo)
   },
   getUserInfo: function (e) {
-    //console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
@@ -62,9 +59,6 @@ Page({
         var userInfo = res.userInfo //用户基本信息
         var nickName = userInfo.nickName //用户名
         var avatarUrl = userInfo.avatarUrl //头像链接
-        //console.log(nickName)
-        //console.log(userInfo)
-        //console.log(avatarUrl)
         that.setData({imgurl: avatarUrl})
       }
     })
@@ -84,7 +78,7 @@ Page({
     wx.chooseImage({
       count: 1, // 默认9
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      sourceType: ['album'], // 可以指定来源是相册还是相机，默认二者都有
       success(res) {
         const src = res.tempFilePaths[0]
         getApp().globalData.selectedImgSrc = res.tempFilePaths[0]
@@ -100,10 +94,7 @@ Page({
     wx.getUserInfo({
       success: function (res) {
         var userInfo = res.userInfo
-        //selectedImgSrc = userInfo.avatarUrl
         getApp().globalData.selectedImgSrc = userInfo.avatarUrl
-        //console.log("use Avatar!")
-        //console.log(userInfo.avatarUrl)
         wx.navigateTo({
           url: '../normal/normal'
         })

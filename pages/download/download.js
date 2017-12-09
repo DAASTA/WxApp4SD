@@ -30,11 +30,10 @@ Page({
     attempt2download = false
     iscomplete = false
     is_uploading = true
-    that.setData({ notification_text: "正在上传文件" })
+    that.setData({ notification_text: "正在上传图片" })
     add_percent = true
     percent_sup = 20
     //上传文件
-    console.log("ready to upload file!")
     wx.uploadFile({
       url: "https://" + getApp().globalData.core_url + "/upload/",
       filePath: getApp().globalData.editedImgSrc,
@@ -48,7 +47,6 @@ Page({
       },
       success: function (res) {
         is_uploading = false
-        //add_percent = false
         console.log("upload file done.")
         if (progress_percent < 20) {
           progress_percent = 20
@@ -56,8 +54,6 @@ Page({
         }
       },
       failure: function (res) {
-        console.log("failure!")
-        console.log(res)
         wx.showToast({
           title: "Error!无法连接到服务器",
           icon: "error",
@@ -87,11 +83,8 @@ Page({
     }, 100)
 
     setInterval(function () {
-      console.log("status:")
-      console.log(is_uploading)
-      console.log(iscomplete)
       if (is_uploading) {
-        that.setData({ notification_text: "正在上传文件" })
+        that.setData({ notification_text: "正在上传图片" })
         percent_sup = 20
         add_percent = true
       }
@@ -103,9 +96,7 @@ Page({
           },
           method: 'GET',
           success: function (res) {
-            console.log("res.data = " + res.data)
             that.setData({ waiting_num: res.data })
-            console.log("get queue info, " + res.data)
             if (original_queue_number == -2)
               original_queue_number = res.data
             if (res.data > 0)
@@ -125,7 +116,7 @@ Page({
                 }
             }
             if (res.data == 0) {
-              that.setData({ notification_text: "正在处理您提交的图片，请稍后..." })
+              that.setData({ notification_text: "二极管子正在努力为您作画，请稍候..." })
               if (progress_percent < 40) {
                 progress_percent = 40
                 that.setData({ progressPercent: progress_percent })
@@ -137,12 +128,10 @@ Page({
               if (res.data > 0) {
                 that.setData({ notification_text: "前面还有" + res.data + "人在排队，请耐心等候" })
                 add_percent = false
-                console.log("waiting in queue")
               }
               else if (res.data == -1) {
                 add_percent = false
                 that.setData({ notification_text: "处理完成，正在下载图片" })
-                console.log("ready to download")
                 if (progress_percent < 85) {
                   progress_percent = 85
                   that.setData({ progressPercent: progress_percent })
@@ -152,7 +141,6 @@ Page({
                 iscomplete = true
                 if (!attempt2download) {
                   attempt2download = true
-                  console.log("attempt to download")
                   wx.downloadFile({
                     url: "https://" + getApp().globalData.core_url + "/download/?id=" + getApp().globalData.user_ID,
                     success: function (res) {
@@ -160,18 +148,11 @@ Page({
                       that.setData({ progressPercent: 100 })
                       progress_percent = 100
                       getApp().globalData.result_Img = res.tempFilePath
-                      console.log(res)
                       that.setData({ getresult: true })
-                      /*wx.showModal({
-                        title: '提示',
-                        content: '图片处理成功，点击图片可进入预览，预览状态下长按图片可保存',
-                        showCancel: false
-                      })*/
                       wx.redirectTo({
                         url: '../endpage/endpage',
                       })
                       that.setData({ getresult: true })
-                      console.log("finished!")
                     }
                   })
                 }
@@ -190,7 +171,6 @@ Page({
 
   //从服务器获得排队信息
   getQueue: function (e) {
-    console.log("current User ID: " + getApp().globalData.user_ID)
     wx.request({
       url: "https://" + getApp().globalData.core_url + "/query/",
       data: {
@@ -198,14 +178,8 @@ Page({
       },
       method: 'GET',
       success: function (res) {
-        console.log("手动获取排队信息 - " + res.data)
-        /*wx.showToast({
-          title: '手动获取排队信息成功',
-        })*/
       },
       fail: function (err) {
-        //console.log("failed to get queue info")
-        //console.log(err)
       }
     })
   },
@@ -216,18 +190,10 @@ Page({
     wx.downloadFile({
       url: "https://" + getApp().globalData.core_url + "/download/?id=" + getApp().globalData.user_ID,
       success: function (res) {
-        console.log("download successfully")
-        console.log(res)
         that.setData({ result_src: res.tempFilePath })
         getApp().globalData.result_Img = res.tempFilePath
-
-        wx.showToast({
-          title: '尝试手动从服务器获取图片',
-          duration: 3000
-        })
       },
       fail: function (err) {
-        //console.log("download failed")
       }
     })
   },

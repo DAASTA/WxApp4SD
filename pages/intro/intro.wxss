@@ -10,3 +10,27 @@
   margin-top: 5px;
   font-size: 12px;
 }
+
+page{
+    background-color: #FFFFFF;
+}
+image{
+    margin: 4px 0;
+}
+
+.text_view{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.bottom_arrow {
+    height: 20px; 
+    width: 100%; 
+}
+
+.centered_img {
+  display: block;
+  margin: auto;
+}

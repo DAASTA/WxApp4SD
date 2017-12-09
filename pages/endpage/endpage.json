@@ -1,6 +1,6 @@
 {
   "backgroundTextStyle": "dark",
-  "navigationBarBackgroundColor": "#000",
-  "navigationBarTitleText": "自定义·自画像",
-  "navigationBarTextStyle": "#fff"
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "我的自画像",
+  "navigationBarTextStyle": "black"
 }
